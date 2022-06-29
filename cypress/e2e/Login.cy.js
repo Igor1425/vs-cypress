@@ -1,5 +1,6 @@
 import { loginPage } from '../pageObjects/LoginPage'
-import{navigation} from '../pageObjects/navigation'
+import { navigation } from '../pageObjects/navigation'
+
 describe('login', () => {
   let vEmail = 'obrenovicigor14.25+r@gmail.com'
   let vPassword = 'novasifra123'

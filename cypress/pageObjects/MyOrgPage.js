@@ -1,41 +1,44 @@
-class MyOrgPage{
-    get novaOrg(){
+class MyOrgPage {
+    get novaOrg() {
         return cy.get('a[class="vs-c-list__item has-caret"')
     }
-    get addBoard(){
-        return cy.get('div[class="vs-c-media"]').last(0);
+    get addBoard() {
+        return cy.get('li[title="Add new Board"]');
     }
-    get selectOrg(){
+    get selectOrg() {
         return cy.get('input[autocomplete="off"]')
     }
-    get boardTitle(){
-        return cy.get('input[type="text"]')
+    get boardTitle() {
+        return cy.get('input[placeholder="Enter title..."]')
     }
-    get nextBtn(){
-        return cy.get('button[class="el-button vs-c-button-focus el-button--success el-button--large"]')
+    get nextBtn() {
+        return cy.get('button[name="next_btn"]')
     }
-    get selectScrum(){
-        return cy.get('span[class="vs-c-radio-check"]')
+    get selectScrum() {
+        return cy.get('span[name="type_scrum"]')
     }
-    get finishBtn(){
-        return cy.get('button[class="el-button vs-c-button-focus el-button--success el-button--large"]')
+    get finishBtn() {
+        return cy.get('button').contains('Finish')
     }
-    clickNovaOrglink(){
-        this.novaOrgLink().click
+    get errMsg(){
+        return cy.get('p').contains("You don't have permission to do this, your free trial period has ended.")
     }
-    clickAddBoardLink(){
-        this.clickaddBoardLink().click
+    clickNovaOrglink() {
+        this.novaOrgLink()[0].click
     }
-    clickBoardTitleLink(){
+    clickAddBoardLink() {
+        this.clickaddBoardLink()[0].click
+    }
+    clickBoardTitleLink() {
         this.clickboardTitleLink().click
     }
-    clicNextBtnLink(){
+    clicNextBtnLink() {
         this.clicnextBtnLink().click
     }
-    clickSelectScrum(){
+    clickSelectScrum() {
         this.selectScrumLink().click
     }
-    clickFinishBtnLink(){
+    clickFinishBtnLink() {
         this.clickfinishBtnLink().click
     }
 

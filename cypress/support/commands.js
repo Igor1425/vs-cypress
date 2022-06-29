@@ -34,7 +34,8 @@ Cypress.Commands.add('loginViaBackend', () => {
 
 
     }).its('body').then(response=>{
-        // console.log('RESPONSE', response)
-        window.localStorage.setItem('token', response.token)
+        localStorage.setItem('token', response.token)
+        localStorage.setItem('user_id', response.user.id)
+        localStorage.setItem('user', JSON.stringify(response.user))
     })
 })
